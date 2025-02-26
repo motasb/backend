@@ -34,7 +34,8 @@ app.use(rateLimiting({
 
 // cors policy
 app.use(cors({
-    origin: "http://localhost:3000"
+    origin: "https://elhlwany-blog.netlify.app"
+    // origin: "http://localhost:3000"
 }))
 
 // Routes
@@ -49,6 +50,10 @@ app.use("/api/password" , require("./routes/passwordRoute"));
 app.use(notFound);
 app.use(errorHandler);
 
-// Running The Servier
-const PORT = process.env.PORT || 8000;
-app.listen(PORT , ()=> console.log(`Server Is Running in ${process.env.NODE_ENV } mode on Port ${PORT} *_^`));
+
+module.exports = app;
+
+
+// // Running The Servier
+// const PORT = process.env.PORT || 8000;
+// app.listen(PORT , ()=> console.log(`Server Is Running in ${process.env.NODE_ENV } mode on Port ${PORT} *_^`));
